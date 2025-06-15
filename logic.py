@@ -10,7 +10,8 @@ class Transaction:
         self.category = category
         self.date = date or datetime.now().strftime("%Y-%m-%d")
         self.description = description
-
+        self.validate()
+        
     def validate(self):
         """Validate transaction data."""
         if not isinstance(self.amount, (int, float)) or self.amount <= 0:
